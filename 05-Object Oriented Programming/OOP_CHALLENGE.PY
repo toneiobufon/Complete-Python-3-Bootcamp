@@ -14,11 +14,17 @@ class Bank_Account():
         return f'Account owner :  {self.owner} \n 
         Account Balance: ${self.balance}'
 
-    def deposit(self, amount):
-        pass
+    def deposit(self, deposit_amount):
+        self.balance += deposit_amount
+        print( 'Your deposit has been accepted!')
 
-    def withdraw(self):
-        pass
+    def withdraw(self, withdaw_amount):
+
+        if self.balance < withdaw_amount:
+            print('Not enough funds to process your withdrawl!')
+        else:
+            self.balance -+ withdaw_amount
+            print('Your withdrawal was done!')
 
 account = Bank_Account('ton', 200)
 
