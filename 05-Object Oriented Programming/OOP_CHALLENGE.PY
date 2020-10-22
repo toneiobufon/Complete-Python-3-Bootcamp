@@ -11,8 +11,7 @@ class Bank_Account():
         self.owner = owner
         self.balance = balance
     def __str__(self):
-        return f'Account owner :  {self.owner} \n 
-        Account Balance: ${self.balance}'
+        return f'Account owner :  {self.owner} \nAccount Balance: $ {self.balance}'
 
     def deposit(self, deposit_amount):
         self.balance += deposit_amount
@@ -23,9 +22,24 @@ class Bank_Account():
         if self.balance < withdaw_amount:
             print('Not enough funds to process your withdrawl!')
         else:
-            self.balance -+ withdaw_amount
+            self.balance -= withdaw_amount
             print('Your withdrawal was done!')
 
-account = Bank_Account('ton', 200)
-
+account = Bank_Account('tono', 200)
 print(account)
+print('\n'*3)
+account.deposit(500)
+print(f'New balance is : $ {account.balance}')
+print('\n'*3)
+
+account.withdraw(500)
+print(f'New balance is : $ {account.balance}')
+print('\n'*3)
+
+account.withdraw(300)
+print(f'New balance is : $ {account.balance}')
+print('\n'*3)
+account.withdraw(200)
+print(f'New balance is : $ {account.balance}')
+
+
